@@ -15,8 +15,9 @@ driver = st.selectbox("Analiz etmek istediğiniz pilotu seçin:", ["VER", "ALO",
 if st.button("Telemetriyi Getir"):
     with st.spinner(f"{driver} için veriler API'den çekiliyor..."):
         
-        # 1. Kendi Backend'imize HTTP GET isteği atıyoruz
-        url = f"http://127.0.0.1:8000/api/telemetry?driver={driver}"
+        # API_URL kısmını şimdilik yerel adresimizde bırakıyoruz, buluta atınca burayı güncelleyeceğiz
+        API_URL = "http://127.0.0.1:8000"
+        url = f"{API_URL}/api/telemetry?driver={driver}"
         
         try:
             response = requests.get(url)

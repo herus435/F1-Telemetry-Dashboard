@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+streamlit
+fastf1
+pandas
+requests
