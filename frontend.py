@@ -16,7 +16,7 @@ if st.button("Telemetriyi Getir"):
     with st.spinner(f"{driver} için veriler API'den çekiliyor..."):
         
         # API_URL kısmını şimdilik yerel adresimizde bırakıyoruz, buluta atınca burayı güncelleyeceğiz
-        API_URL = "http://127.0.0.1:8000"
+        API_URL = "https://f1-telemetry-dashboard-txrt.onrender.com"
         url = f"{API_URL}/api/telemetry?driver={driver}"
         
         try:
