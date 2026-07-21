@@ -1,9 +1,15 @@
+import os
 from fastapi import FastAPI
 import fastf1
-from functools import lru_cache # Caching için kütüphaneyi ekliyoruz
+from functools import lru_cache 
 
 app = FastAPI(title="F1 Telemetri Servisi")
 
+# Klasör sistemde yoksa otomatik olarak oluşturuyoruz
+if not os.path.exists('cache_verileri'):
+    os.makedirs('cache_verileri')
+
+# Artık klasörün var olduğundan emin olduğumuz için önbelleği güvenle açabiliriz
 fastf1.Cache.enable_cache('cache_verileri')
 
 # Bu dekoratör, fonksiyonun son 32 farklı parametre kombinasyonunu RAM'de tutar (Hash'ler)
